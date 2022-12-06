@@ -14,9 +14,6 @@
     "start": "concurrently --kill-others-on-fail \"yarn app\"  \"yarn server\"",
     "start:server" : "yarn workspace backend start"
   },
-  "engines": {
-    "node": "18.12.0"
-  },
   "devDependencies": {
     "concurrently": "^7.6.0"
   }
