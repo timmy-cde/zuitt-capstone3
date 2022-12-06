@@ -1,0 +1,492 @@
+{
+	"info": {
+		"_postman_id": "e859bbc6-0ea1-4999-ba2a-b64d89afbf2c",
+		"name": "capstone2-manuel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21501703"
+	},
+	"item": [
+		{
+			"name": "User requests",
+			"item": [
+				{
+					"name": "Register a user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Kim\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"Kimdoe@mail.com\",\r\n    \"mobileNo\": \"09123567890\",\r\n    \"address\": \"Makati, Metro Manila, Philippines\",\r\n    \"password\": \"kimdoe12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/users/register",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYmM0Mzg0MmFmNmEyMTExNWI1MjU3YSIsImVtYWlsIjoiamFuZUBtYWlsLmNvbSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NTY1MDg0MDZ9.N0WpR68yxnjIaRws5pdfgY4PdXi7Q8twsnrSfIIjCMg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"johndoe@mail.com\",\r\n    \"password\": \"johndoe12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{heroku}}users/login",
+							"host": [
+								"{{heroku}}users"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYzQyZWRkNWY0MGI5MDgxYWQ3YTE1NCIsImVtYWlsIjoiam9obmRvZUBtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1NzAzOTg5NX0.Jdl-UPrmSBj2sSm6SiQiqKMuzJGXl4YN2DsBooF8364",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{heroku}}users/profile",
+							"host": [
+								"{{heroku}}users"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set user as Admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYzQyZWRkNWY0MGI5MDgxYWQ3YTE1NCIsImVtYWlsIjoiam9obmRvZUBtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1NzAyNDI4Nn0.zD4aHOzNGjUlfZZoF5uJjEdqIg_7VMeon9qMVctwWZs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{heroku}}users/62c42eef5f40b9081ad7a157/setAsAdmin",
+							"host": [
+								"{{heroku}}users"
+							],
+							"path": [
+								"62c42eef5f40b9081ad7a157",
+								"setAsAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve user's orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYzQ0ZTg0NDYzMGIzOTQxNjI2MGJmYSIsImVtYWlsIjoia2ltZG9lQG1haWwuY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY1NzAzMzA1Nn0.VVNomLRvkm1GhKHz4pqnawO6C2X3MupJOkkY2bhPB1s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{heroku}}users/myOrders",
+							"host": [
+								"{{heroku}}users"
+							],
+							"path": [
+								"myOrders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get admin orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYzQyZWRkNWY0MGI5MDgxYWQ3YTE1NCIsImVtYWlsIjoiam9obmRvZUBtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1NzA5ODM5NX0.2c70Hoqiw3I5HIYg7sjw3QkRohnDaCIUP4ofCFj9K38",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{heroku}}users/order/admin",
+							"host": [
+								"{{heroku}}users"
+							],
+							"path": [
+								"order",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product Requests",
+			"item": [
+				{
+					"name": "Get all active products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{heroku}}products",
+							"host": [
+								"{{heroku}}products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a specific product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{heroku}}products/62c3e5431923b458c0012ec9",
+							"host": [
+								"{{heroku}}products"
+							],
+							"path": [
+								"62c3e5431923b458c0012ec9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYzQyZWVmNWY0MGI5MDgxYWQ3YTE1NyIsImVtYWlsIjoiamFuZWRvZUBtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1NzAyNDQxMn0.kOMzDCuk0pY3doKrJmEiaABUyKjFJbI4Kwede_mqMOA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Cello\",\r\n    \"description\": \"Also called violoncello, is a bowed (sometimes plucked and occasionally hit) string instrument of the violin family. It larger than a viola and has a lower and deeper sound.\",\r\n    \"price\": 10000,\r\n    \"stocks\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{heroku}}products/createProduct",
+							"host": [
+								"{{heroku}}products"
+							],
+							"path": [
+								"createProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update product info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYzQyZWRkNWY0MGI5MDgxYWQ3YTE1NCIsImVtYWlsIjoiam9obmRvZUBtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1NzAyNDQ3M30.lcHBOV2BBU-cpKFI61wBX8Nd5OcmP53rSYKKAXV3JKo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Viola\",\r\n    \"description\": \"It is a 4 stringed instrument that is slightly larger than a violin, it has a lower and deeper sound.\",\r\n    \"price\": 4000,\r\n    \"stocks\": 15\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{heroku}}products/62c42f935f40b9081ad7a16e",
+							"host": [
+								"{{heroku}}products"
+							],
+							"path": [
+								"62c42f935f40b9081ad7a16e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Archive a product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYzQyZWRkNWY0MGI5MDgxYWQ3YTE1NCIsImVtYWlsIjoiam9obmRvZUBtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1NzAyNDQ3M30.lcHBOV2BBU-cpKFI61wBX8Nd5OcmP53rSYKKAXV3JKo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{heroku}}products/62c42f935f40b9081ad7a16e/archive",
+							"host": [
+								"{{heroku}}products"
+							],
+							"path": [
+								"62c42f935f40b9081ad7a16e",
+								"archive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Order products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYzQ0ZTg0NDYzMGIzOTQxNjI2MGJmYSIsImVtYWlsIjoiS2ltZG9lQG1haWwuY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY1NzAzMjM1Mn0.R5wW9oh7EuG6Ak4Bxj_jNFAvvNIJU7BZ2-7x_wHUJLs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{heroku}}products/62c42f8e5f40b9081ad7a169/order",
+							"host": [
+								"{{heroku}}products"
+							],
+							"path": [
+								"62c42f8e5f40b9081ad7a169",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check out desired orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYzQ0ZTg0NDYzMGIzOTQxNjI2MGJmYSIsImVtYWlsIjoia2ltZG9lQG1haWwuY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY1NzAzMzA1Nn0.VVNomLRvkm1GhKHz4pqnawO6C2X3MupJOkkY2bhPB1s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\": [\r\n        \"62c462ad4da4ee018edd3d0c\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{heroku}}products/order/checkout",
+							"host": [
+								"{{heroku}}products"
+							],
+							"path": [
+								"order",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show all active orders (admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYzQyZWRkNWY0MGI5MDgxYWQ3YTE1NCIsImVtYWlsIjoiam9obmRvZUBtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1NzA5ODM5NX0.2c70Hoqiw3I5HIYg7sjw3QkRohnDaCIUP4ofCFj9K38",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{heroku}}products/order/all",
+							"host": [
+								"{{heroku}}products"
+							],
+							"path": [
+								"order",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show all archived products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYzQyZWRkNWY0MGI5MDgxYWQ3YTE1NCIsImVtYWlsIjoiam9obmRvZUBtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1NzA5ODM5NX0.2c70Hoqiw3I5HIYg7sjw3QkRohnDaCIUP4ofCFj9K38",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{heroku}}products/order/archive",
+							"host": [
+								"{{heroku}}products"
+							],
+							"path": [
+								"order",
+								"archive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unarchive Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYzQyZWRkNWY0MGI5MDgxYWQ3YTE1NCIsImVtYWlsIjoiam9obmRvZUBtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1NzAzOTg5NX0.Jdl-UPrmSBj2sSm6SiQiqKMuzJGXl4YN2DsBooF8364",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"stocks\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{heroku}}products/62c42f935f40b9081ad7a16e/reactivate",
+							"host": [
+								"{{heroku}}products"
+							],
+							"path": [
+								"62c42f935f40b9081ad7a16e",
+								"reactivate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

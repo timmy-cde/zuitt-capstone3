@@ -1,6 +1,23 @@
 {
-  "dependencies": {
-    "vercel": "^28.7.2"
+  "name": "cps3",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "app": "yarn workspace frontend start",
+    "server": "yarn workspace backend serve",
+    "build-app": "yarn workspace frontend build",
+    "build-server": "yarn workspace backend build",
+    "start": "concurrently --kill-others-on-fail \"yarn app\"  \"yarn server\"",
+    "start:server" : "yarn workspace backend start"
   },
-  "version": "0.0.0"
+  "engines": {
+    "node": "18.12.0"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
 }
