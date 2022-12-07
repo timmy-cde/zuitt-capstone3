@@ -33,10 +33,9 @@ app.use("/products", productRoutes);
 
 let filepath = path.join(__dirname, "../frontend/build")
 let resolvedpath = path.resolve(filepath)
-console.log(resolvedpath)
 app.use(express.static(path.join(resolvedpath)));
 
-app.get("*", (_, res) => {
+app.get("/*", (_, res) => {
     res.sendFile(
         resolvedpath, (err) => {
             if (err) {

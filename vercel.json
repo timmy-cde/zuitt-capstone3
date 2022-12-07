@@ -1,15 +1,25 @@
 {
-    "version": 2,
-    "builds": [
-        {
-            "src": "/backend/index.js",
-            "use": "@now/node"
-        }
-    ],
-    "rewrites": [
-        {
-            "source": "/(.*)",
-            "destination": "/backend/index.js"
-        }
-    ]
+  "version": 2,
+  "builds": [
+    {
+      "src": "/backend/index.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "/frontend/build",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    { 
+        "src": "/favicon.ico", 
+        "dest": "/frontend/build/favicon.ico" 
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/backend/index.js"
+    }
+  ]
 }
