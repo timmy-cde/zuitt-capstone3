@@ -30,11 +30,15 @@ app.use(express.urlencoded({ extended: true }));
 // Routes for our API
 app.use("/users", userRoutes);
 app.use("/products", productRoutes);
-app.use(express.static(path.join(__dirname, "./frontend/build")));
+
+let filepath = path.join(__dirname, "../frontend/build")
+let resolvedpath = path.resolve(filepath)
+console.log(resolvedpath)
+app.use(express.static(path.join(resolvedpath)));
 
 app.get("*", (_, res) => {
     res.sendFile(
-        path.join(__dirname, "./frontend/build/index.html"), (err) => {
+        resolvedpath, (err) => {
             if (err) {
                 res.status(500).send(err);
             }
