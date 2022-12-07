@@ -31,13 +31,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/users", userRoutes);
 app.use("/products", productRoutes);
 
-let filepath = path.join(__dirname, "../frontend/build")
-let resolvedpath = path.resolve(filepath)
-app.use(express.static(path.join(resolvedpath)));
 
-app.get("/*", (_, res) => {
+app.get("/", (_, res) => {
+    app.use(express.static(path.resolve(__dirname, 'frontend', 'build')));
     res.sendFile(
-        resolvedpath, (err) => {
+        path.resolve(__dirname, 'frontend', 'build', 'index.html'), (err) => {
             if (err) {
                 res.status(500).send(err);
             }
