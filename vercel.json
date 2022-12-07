@@ -13,7 +13,7 @@
   "routes": [
     { 
         "src": "/favicon.ico", 
-        "dest": "/frontend/build/favicon.ico" 
+        "dest": "/frontend/build"
     }
   ],
   "rewrites": [
