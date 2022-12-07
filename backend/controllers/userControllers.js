@@ -1,6 +1,6 @@
 const User = require("../models/User");
 const Product = require("../models/Product");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const auth = require("../auth");
 
 // Check duplicate email
