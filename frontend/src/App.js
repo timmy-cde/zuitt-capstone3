@@ -80,7 +80,7 @@ fetch(`${process.env.REACT_APP_API_URL}/users/profile`, {
 
   return (
     <UserProvider value={{ user, setUser, unsetUser }}>
-      <Router>
+      <Router basename='/'>
         <AppNavBar />
         <Container fluid className='p-0 allMargin'>
           <Routes>
