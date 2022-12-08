@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.30adb89e.css",
-    "main.js": "/static/js/main.fcb67992.js",
+    "main.js": "/static/js/main.c3d37088.js",
     "static/media/violin-no-bg-2.png": "/static/media/violin-no-bg-2.d027475987327dc69423.png",
     "static/media/piano-edited.png": "/static/media/piano-edited.af977a4c16f730939d30.png",
     "static/media/blob2.svg": "/static/media/blob2.21260c956d71b21c67eda90d0e0685ae.svg",
     "static/media/blob.svg": "/static/media/blob.811dd9a779885354768a459df9604a62.svg",
     "index.html": "/index.html",
     "main.30adb89e.css.map": "/static/css/main.30adb89e.css.map",
-    "main.fcb67992.js.map": "/static/js/main.fcb67992.js.map"
+    "main.c3d37088.js.map": "/static/js/main.c3d37088.js.map"
   },
   "entrypoints": [
     "static/css/main.30adb89e.css",
-    "static/js/main.fcb67992.js"
+    "static/js/main.c3d37088.js"
   ]
 }

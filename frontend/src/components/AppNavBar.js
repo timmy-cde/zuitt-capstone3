@@ -31,7 +31,7 @@ export default function AppNavBar() {
               {user.isAdmin ? (
                 <Navbar.Brand as={Link} to={"/admin"}>
                   <img
-                    src={process.env.PUBLIC_URL + "./logo-final-caption.png"}
+                    src={"../media/logo-final-caption.png"}
                     width="90"
                     className="d-inline-block align-top"
                     id="brand-logo"
@@ -41,7 +41,7 @@ export default function AppNavBar() {
               ) : (
                 <Navbar.Brand as={Link} to={"/"}>
                   <img
-                    src={process.env.PUBLIC_URL + "./logo-final-caption.png"}
+                    src={"../media/logo-final-caption.png"}
                     width="90"
                     className="d-inline-block align-top"
                     id="brand-logo"
@@ -95,9 +95,6 @@ export default function AppNavBar() {
                         className="me-auto"
                         align="end"
                       >
-                        {/* <NavDropdown.Item as={Link} to="/account" eventKey="/account">
-                          My Account
-                        </NavDropdown.Item> */}
                         <NavDropdown.Item
                           as={Link}
                           to="/logout"
@@ -192,7 +189,7 @@ export default function AppNavBar() {
                     eventKey={"/admin"}
                   >
                     <img
-                      src={process.env.PUBLIC_URL + "./logo192.png"}
+                      src={"../media/logo192.png"}
                       width="60"
                       className="d-block align-bottom mx-auto"
                       id="brand-logo"
@@ -210,7 +207,7 @@ export default function AppNavBar() {
                     eventKey={"/"}
                   >
                     <img
-                      src={process.env.PUBLIC_URL + "./logo192.png"}
+                      src={"../media/logo192.png"}
                       width="60"
                       className="d-block align-bottom mx-auto"
                       id="brand-logo"
