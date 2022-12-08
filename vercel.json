@@ -2,18 +2,41 @@
   "version": 2,
   "builds": [
     {
-      "src": "./backend/index.js",
-      "use": "@vercel/node"
+      "src": "backend/index.js",
+      "use": "@now/node"
     },
     {
-      "src": "./frontend/build",
-      "use": "@vercel/static"
+      "src": "frontend/package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "build" }
     }
   ],
-  "rewrites": [
+  "routes": [
     {
-      "source": "/(.*)",
-      "destination": "/backend/index.js"
-    }
+      "src": "/api/(.*)",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "backend/index.js"
+    },
+    {
+      "src": "/static/(.*)",
+      "headers": { "cache-control": "s-maxage=31536000, immutable" },
+      "dest": "frontend/static/$1"
+    },
+    { "src": "/favicon.ico", "dest": "frontend/favicon.ico" },
+    {
+      "src": "/asset-manifest.json",
+      "dest": "frontend/asset-manifest.json"
+    },
+    {
+      "src": "/precache-manifest.(.*)",
+      "dest": "frontend/precache-manifest.$1"
+    },
+    { "src": "/manifest.json", "dest": "frontend/manifest.json" },
+    {
+      "src": "/service-worker.js",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "frontend/service-worker.js"
+    },
+    { "src": "/(.*)", "dest": "frontend/index.html" }
   ]
 }
