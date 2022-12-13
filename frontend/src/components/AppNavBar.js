@@ -6,6 +6,8 @@ import { Cart2, Person } from 'react-bootstrap-icons'
 import UserContext from "../UserContext";
 
 import '../App.css';
+import Logo from '../media/logo-final-caption.png';
+import LogoMobile from '../media/logo192.png';
 
 export default function AppNavBar() {
 
@@ -31,7 +33,7 @@ export default function AppNavBar() {
               {user.isAdmin ? (
                 <Navbar.Brand as={Link} to={"/admin"}>
                   <img
-                    src={"../media/logo-final-caption.png"}
+                    src={Logo}
                     width="90"
                     className="d-inline-block align-top"
                     id="brand-logo"
@@ -41,7 +43,7 @@ export default function AppNavBar() {
               ) : (
                 <Navbar.Brand as={Link} to={"/"}>
                   <img
-                    src={"../media/logo-final-caption.png"}
+                    src={Logo}
                     width="90"
                     className="d-inline-block align-top"
                     id="brand-logo"
@@ -189,7 +191,7 @@ export default function AppNavBar() {
                     eventKey={"/admin"}
                   >
                     <img
-                      src={"../media/logo192.png"}
+                      src={LogoMobile}
                       width="60"
                       className="d-block align-bottom mx-auto"
                       id="brand-logo"
@@ -207,7 +209,7 @@ export default function AppNavBar() {
                     eventKey={"/"}
                   >
                     <img
-                      src={"../media/logo192.png"}
+                      src={LogoMobile}
                       width="60"
                       className="d-block align-bottom mx-auto"
                       id="brand-logo"
