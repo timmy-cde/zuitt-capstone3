@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 import UserContext from "../UserContext";
 import './ProductCard.css'
 
-export default function ProductCard({prodProp}) {
+export default function ProductCard({prodProp, load}) {
 
   const { _id, name, description, price, stocks, pictures} = prodProp;
 
@@ -120,7 +120,7 @@ export default function ProductCard({prodProp}) {
   return (
     <Card className="p-3 cards" border="info" key={_id}>
       <div className="inner">
-        <img src={`${pictures[0].pic}`} alt="product" className="image-card img-fluid" />
+        <img loading={load} src={`${pictures[0].pic}`} alt="product" className="image-card img-fluid" />
       </div>
       <Card.Body>
         <Card.Title

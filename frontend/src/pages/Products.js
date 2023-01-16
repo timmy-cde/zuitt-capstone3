@@ -14,8 +14,12 @@ export default function Products() {
         .then(res => res.json())
         .then((data) => {
             setProducts(
-                data.map((product) => {
-                    return <ProductCard key={product._id} prodProp={product} />
+                data.map((product, index) => {
+                    if(index < 5) {
+                      return <ProductCard key={product._id} prodProp={product} load={'lazy'} />
+                    } else {
+                      return <ProductCard key={product._id} prodProp={product} load={'auto'}/>
+                    }
                 })
             )
         })
